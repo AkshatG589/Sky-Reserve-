@@ -1,0 +1,47 @@
+/* Gradient background for missing image */
+.fallback-image {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+/* Plane icon rotation */
+.plane-icon {
+  animation: planeTilt 2s ease-in-out infinite alternate;
+}
+
+/* Wind effect */
+/* Wind effect */
+.fallback-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;          /* start from right side */
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    to left,         /* 👈 change direction */
+    transparent 20%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 80%
+  );
+  animation: windMove 5s linear infinite;
+}
+
+/* Wind animation right → left */
+@keyframes windMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Plane rotation (tilt effect) */
+@keyframes planeTilt {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(10deg);
+  }
+}

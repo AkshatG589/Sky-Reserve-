@@ -4,6 +4,8 @@ import { toast } from "react-hot-toast";
 import SearchForm from "../utility/Search/SearchForm";
 import PriceFilter from "../utility/Search/PriceFilter";
 import FlightCard from "../utility/Search/FlightCard";
+import localFlights from "./flight.json"; // ✅ fallback data
+import SEO from "../Components/SEO"; // ✅ import SEO
 
 const Search = () => {
   const [allFlights, setAllFlights] = useState([]);
@@ -21,16 +23,29 @@ const Search = () => {
         const res = await axios.get(
           `http://api.aviationstack.com/v1/flights?access_key=25259fbeb910b5be1a67c6e3737ab494`
         );
-        const dataWithPrices = res.data.data.map(f => ({
-          ...f,
-          price: Math.floor(Math.random() * 400 + 50),
-        }));
+
+        let dataWithPrices = [];
+        if (res.data?.data?.length > 0) {
+          dataWithPrices = res.data.data.map(f => ({
+            ...f,
+            price: Math.floor(Math.random() * 400 + 50),
+          }));
+          toast.success("Flights fetched from API successfully!");
+        } else {
+          throw new Error("No flights from API");
+        }
+
         setAllFlights(dataWithPrices);
         setFilteredFlights(dataWithPrices);
-        toast.success("Flights pre-fetched successfully!");
       } catch (err) {
-        console.error(err);
-        toast.error("Failed to fetch flights!");
+        console.error("API fetch failed, using local data:", err.message);
+        const fallbackData = localFlights.map(f => ({
+          ...f,
+          price: f.price || Math.floor(Math.random() * 400 + 50),
+        }));
+        setAllFlights(fallbackData);
+        setFilteredFlights(fallbackData);
+        toast("Using fallback flight data.", { icon: "⚠️" });
       } finally {
         setLoading(false);
       }
@@ -43,10 +58,11 @@ const Search = () => {
       toast.error("Please fill From and To fields!");
       return;
     }
-    const results = allFlights.filter(f =>
-      f.departure?.iata?.toUpperCase() === from.toUpperCase() &&
-      f.arrival?.iata?.toUpperCase() === to.toUpperCase() &&
-      (!date || f.flight_date === date)
+    const results = allFlights.filter(
+      f =>
+        f.departure?.iata?.toUpperCase() === from.toUpperCase() &&
+        f.arrival?.iata?.toUpperCase() === to.toUpperCase() &&
+        (!date || f.flight_date === date)
     );
     setFilteredFlights(results);
     if (results.length > 0) toast.success(`${results.length} flights found!`);
@@ -59,10 +75,20 @@ const Search = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
+      {/* SEO */}
+      <SEO
+        title="Search Flights - Sky Reserve"
+        description="Search and book flights worldwide with Sky Reserve. Find the best deals and reserve your perfect flight today."
+        url="https://ak-sky-reserve.vercel.app/search"
+      />
+
       {/* Header */}
-      <h1 className="text-4xl font-bold mb-4 text-center">Find Your Perfect Flight</h1>
+      <h1 className="text-4xl font-bold mb-4 text-center">
+        Find Your Perfect Flight
+      </h1>
       <p className="text-center text-gray-600 mb-8">
-        Search from thousands of flights to your dream destination and filter by price to book the best deals.
+        Search from thousands of flights to your dream destination and filter by
+        price to book the best deals.
       </p>
 
       {/* Search Form */}
@@ -85,10 +111,17 @@ const Search = () => {
 
       {/* Flights */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredFlights.filter(f => f.price >= priceRange[0] && f.price <= priceRange[1]).length > 0 ? (
+        {filteredFlights.filter(
+          f => f.price >= priceRange[0] && f.price <= priceRange[1]
+        ).length > 0 ? (
           filteredFlights
             .filter(f => f.price >= priceRange[0] && f.price <= priceRange[1])
-            .map(f => <FlightCard key={f.flight?.iata + f.departure?.scheduled} flight={f} />)
+            .map(f => (
+              <FlightCard
+                key={f.flight?.iata + f.departure?.scheduled}
+                flight={f}
+              />
+            ))
         ) : (
           <p className="text-center col-span-full text-gray-500 font-medium">
             No flights found from {from || "___"} to {to || "___"}.

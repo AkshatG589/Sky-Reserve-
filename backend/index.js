@@ -21,8 +21,6 @@ app.use(clerkMiddleware({
 }));
 
 // ✅ Routes
-app.use("/api/certificates", require("./routes/certificateRoutes"));
-app.use("/api/admin", require("./routes/Admin")); // 👈 Admin routes
 
 app.get("/", (req, res) => {
   res.send("Hello World! Backend is running 🚀");

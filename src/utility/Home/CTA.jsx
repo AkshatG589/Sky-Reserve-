@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom"; // ✅ import Link
 
 const CTA = () => {
   return (
@@ -12,9 +13,13 @@ const CTA = () => {
           Join millions of satisfied travelers and discover why SkyReserve is the
           smartest way to book your flights.
         </p>
-        <button className="inline-flex items-center gap-2 bg-[#ff8a00] text-[#0b1d3a] font-semibold px-6 py-3 rounded-full text-lg hover:shadow-xl hover:translate-y-1 transition-transform duration-300">
+        {/* ✅ Changed button to Link */}
+        <Link
+          to="/flights"
+          className="inline-flex items-center gap-2 bg-[#ff8a00] text-[#0b1d3a] font-semibold px-6 py-3 rounded-full text-lg hover:shadow-xl hover:translate-y-1 transition-transform duration-300"
+        >
           Start Your Journey <FaArrowRight />
-        </button>
+        </Link>
       </div>
     </section>
   );

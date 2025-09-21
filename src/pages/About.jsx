@@ -8,12 +8,12 @@ const About = () => {
   return (
     <>
       <SEO
-        title="SkyReserve | About the Developer"
-        description="Learn more about Akshat Gupta, the passionate Full-Stack Developer behind SkyReserve. Explore his journey, skills, and contact information."
-        url="https://sky-reserve-3a56bdb3.base44.app/about"
-        image="https://sky-reserve-3a56bdb3.base44.app/assets/dev.png"
-        pageType="ProfilePage"
-      />
+  title="SkyReserve | About the Developer"
+  description="Learn more about Akshat Gupta, the passionate Full-Stack Developer behind SkyReserve. Explore his journey, skills, and contact information."
+  url="https://ak-sky-reserve.vercel.app/about"
+  image="https://ak-sky-reserve.vercel.app/assets/dev.png"
+  pageType="ProfilePage"
+/>
 
       <div className="bg-[#0b1d3a] text-white min-h-[40vh] flex flex-col">
         <div className="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center md:items-start gap-10">

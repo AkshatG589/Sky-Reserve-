@@ -2,10 +2,10 @@ import React from "react";
 import { Title, Meta, Link } from "react-head";
 
 const SEO = ({
-  title = "Syntecxhub - Internships & Trainings",
-  description = "Syntecxhub provides industry-ready training programs and internships with real-world projects, certificates, and career support.",
-  url = "https://syntecxhub.vercel.app/",
-  image = "https://syntecxhub.vercel.app/android-chrome-512x512.png",
+  title = "Sky Reserve - Flight Booking & Reservations",
+  description = "Sky Reserve helps you search, compare, and book flights worldwide with ease. Find the best deals and reserve your perfect journey today.",
+  url = "https://ak-sky-reserve.vercel.app/",
+  image = "https://ak-sky-reserve.vercel.app/android-chrome-512x512.png",
   type = "website",
   index = true,
   pageType = "WebPage",
@@ -23,11 +23,11 @@ const SEO = ({
     },
     publisher: {
       "@type": "Organization",
-      name: "Syntecxhub",
-      url: "https://syntecxhub.vercel.app/",
+      name: "Sky Reserve",
+      url: "https://ak-sky-reserve.vercel.app/",
       logo: {
         "@type": "ImageObject",
-        url: "https://syntecxhub.vercel.app/android-chrome-512x512.png",
+        url: "https://ak-sky-reserve.vercel.app/android-chrome-512x512.png",
       },
     },
     ...extraSchema,
@@ -49,7 +49,7 @@ const SEO = ({
       <Meta property="og:image" content={image} />
       <Meta property="og:url" content={url} />
       <Meta property="og:type" content={type} />
-      <Meta property="og:site_name" content="Syntecxhub" />
+      <Meta property="og:site_name" content="Sky Reserve" />
 
       {/* Twitter */}
       <Meta name="twitter:card" content="summary_large_image" />

@@ -2,8 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
-import SEO from "../Components/SEO"
-
+import SEO from "../Components/SEO";
 
 const Section = ({ id, title, children }) => (
   <motion.section
@@ -15,9 +14,7 @@ const Section = ({ id, title, children }) => (
     className="space-y-3"
   >
     <h2 className="text-xl md:text-2xl font-semibold text-gray-800">{title}</h2>
-    <div className="prose prose-indigo max-w-none text-gray-700">
-      {children}
-    </div>
+    <div className="prose prose-sky max-w-none text-gray-700">{children}</div>
   </motion.section>
 );
 
@@ -30,15 +27,16 @@ export default function PrivacyPolicy() {
 
   return (
     <main className="bg-gray-50">
-       <SEO
-        title="Privacy Policy - Syntecxhub"
-        description="Read Syntecxhub's privacy policy to understand how we collect, use, and protect your personal information."
-        url="https://syntecxhub.vercel.app/privacy-policy"
-        image="https://syntecxhub.vercel.app/android-chrome-512x512.png"
-      />
+      <SEO
+  title="Privacy Policy - Sky Reserve"
+  description="Read Sky Reserve's privacy policy to learn how we handle, protect, and safeguard your flight booking data and personal information."
+  url="https://ak-sky-reserve.vercel.app/privacy-policy"
+  image="https://ak-sky-reserve.vercel.app/android-chrome-512x512.png"
+/>
+
       {/* Hero */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-700 opacity-90" />
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -48,9 +46,7 @@ export default function PrivacyPolicy() {
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">
             Privacy <span className="text-white/90">Policy</span>
           </h1>
-          <p className="mt-4 text-white/90">
-            Last updated: {lastUpdated}
-          </p>
+          <p className="mt-4 text-white/90">Last updated: {lastUpdated}</p>
         </motion.div>
       </div>
 
@@ -58,94 +54,95 @@ export default function PrivacyPolicy() {
       <div className="max-w-5xl mx-auto px-6 py-12 md:py-16 space-y-10">
         <Section id="intro" title="Introduction">
           <p>
-            At <strong>Syntecxhub</strong> (“Company”, “we”, “our”, “us”), we
-            value your privacy and are committed to protecting your personal
-            information. This Privacy Policy explains how we collect, use,
-            disclose, and safeguard your information when you access our website
-            and services. By using our website, you agree to this Privacy Policy.
-            If you do not agree, please discontinue use of our services.
+            At <strong>Sky Reserve</strong> (“Company”, “we”, “our”, “us”), your
+            trust is our priority. This Privacy Policy explains how we collect,
+            use, and safeguard your personal information when you search and
+            book flights using our platform. By continuing to use our services,
+            you consent to the practices described in this Policy.
           </p>
         </Section>
 
         <Section id="info-we-collect" title="Information We Collect">
           <ul>
             <li>
-              <strong>Personal Information:</strong> Name, email address, phone
-              number, or other details you provide when you contact us or fill out
-              forms (e.g., internship application interest or contact queries).
+              <strong>Booking Information:</strong> Name, email address, phone
+              number, passport/ID details, and payment information when booking
+              flights.
             </li>
             <li>
-              <strong>Non-Personal Information:</strong> Device and browser
-              information, operating system, referring URLs, and general usage
-              data.
+              <strong>Travel Information:</strong> Departure and arrival cities,
+              travel dates, airline preferences, and booking history.
             </li>
             <li>
-              <strong>Automatically Collected Data:</strong> IP address, access
-              times, pages viewed, and interactions to help improve performance
-              and security.
+              <strong>Technical Information:</strong> IP address, browser type,
+              device type, operating system, and interaction data for improving
+              user experience.
             </li>
           </ul>
         </Section>
 
         <Section id="how-we-use" title="How We Use Your Information">
           <ul>
-            <li>Provide, operate, and maintain our website and services.</li>
-            <li>Improve user experience and website functionality.</li>
-            <li>Respond to inquiries and provide customer support.</li>
+            <li>Process flight searches, bookings, and payments.</li>
             <li>
-              Send updates or communications (only where you have provided consent
-              or it is otherwise permitted by law).
+              Provide booking confirmations, updates, and customer support.
             </li>
-            <li>Detect, prevent, and address technical or security issues.</li>
+            <li>
+              Enhance our platform, optimize search results, and improve service
+              reliability.
+            </li>
+            <li>
+              Send flight updates, offers, and promotional content (only if you
+              opt-in).
+            </li>
+            <li>Protect our systems from fraudulent or unauthorized activity.</li>
           </ul>
         </Section>
 
         <Section id="cookies" title="Cookies and Tracking Technologies">
           <p>
-            <strong>We do not currently use cookies or tracking technologies.</strong>{" "}
-            If we introduce cookies in the future, we will update this Policy and,
-            where required, present you with appropriate choices and controls
-            (e.g., a cookie banner and settings).
+            Sky Reserve may use cookies to personalize your experience and track
+            essential usage metrics. These cookies help us remember your
+            preferences (like recent searches). You can disable cookies in your
+            browser settings, but some features may not function properly.
           </p>
         </Section>
 
         <Section id="sharing" title="How We Share Your Information">
           <ul>
             <li>
-              <strong>Service Providers:</strong> With trusted vendors who assist
-              in operating our website (e.g., hosting, email delivery), bound by
-              contractual confidentiality and data-protection obligations.
+              <strong>Airline & Travel Partners:</strong> Shared only as
+              necessary to process your bookings.
             </li>
             <li>
-              <strong>Legal Obligations:</strong> When required by law, regulation,
-              or legal process, or to protect our rights, users, or the public.
+              <strong>Service Providers:</strong> Payment gateways, cloud
+              hosting, and analytics providers under strict confidentiality
+              agreements.
             </li>
             <li>
-              <strong>Business Transfers:</strong> In connection with a merger,
-              acquisition, or sale of assets, your information may be transferred
-              as part of that transaction.
+              <strong>Legal Compliance:</strong> When disclosure is required by
+              applicable laws or to protect our rights and users.
             </li>
           </ul>
-          <p>We do not sell your personal information.</p>
+          <p>We never sell your personal information to third parties.</p>
         </Section>
 
         <Section id="security" title="Data Security">
           <p>
-            We implement reasonable technical and organizational measures to help
-            protect your information against unauthorized access, alteration,
-            disclosure, or destruction. However, no method of transmission over
-            the Internet or electronic storage is 100% secure, and we cannot
-            guarantee absolute security.
+            We apply strong encryption and secure transmission methods to
+            protect your data during bookings. While we strive to safeguard all
+            information, no system is 100% secure, and we encourage safe online
+            practices when sharing personal data.
           </p>
         </Section>
 
         <Section id="your-rights" title="Your Rights and Choices">
           <p>
-            Depending on your location, you may have rights to access, correct,
-            update, or delete your personal information; object to or restrict certain
-            processing; and withdraw consent where processing is based on consent.
-            To exercise these rights, please contact us using the details in the{" "}
-            <a href="#contact" className="text-indigo-600 underline">
+            Depending on your region, you may have rights to access, modify, or
+            delete your personal information. You may also choose to opt-out of
+            marketing communications at any time. To request changes, please
+            contact us using the details in the{" "}
+            <a href="#contact" className="text-sky-600 underline">
               Contact Us
             </a>{" "}
             section.
@@ -154,67 +151,59 @@ export default function PrivacyPolicy() {
 
         <Section id="third-parties" title="Third-Party Links">
           <p>
-            Our website may contain links to third-party websites. We are not
-            responsible for the privacy practices or content of those sites. We
-            encourage you to review their privacy policies before providing any
-            personal information.
+            Our platform may link to third-party airline or travel sites. Sky
+            Reserve is not responsible for their privacy practices, and we
+            recommend reviewing their policies before sharing personal
+            information.
           </p>
         </Section>
 
         <Section id="children" title="Children’s Privacy">
           <p>
-            Our services are not directed to individuals under the age of 13, and
-            we do not knowingly collect personal information from children. If you
-            believe a child has provided us with personal information, please
-            contact us and we will take appropriate steps to delete such data.
+            Sky Reserve does not knowingly allow bookings by individuals under
+            the age of 13 without parental consent. If such data is found, we
+            will promptly delete it.
           </p>
         </Section>
 
         <Section id="changes" title="Changes to This Policy">
           <p>
-            We may update this Privacy Policy from time to time to reflect changes
-            in our practices or for legal and regulatory reasons. We will post the
-            updated Policy on this page and update the “Last updated” date at the
-            top. Your continued use of the website after changes become effective
-            constitutes acceptance of the revised Policy.
+            We may revise this Privacy Policy periodically. Updates will be
+            posted here with a revised “Last Updated” date. We encourage users
+            to review this page regularly to stay informed.
           </p>
         </Section>
 
         <Section id="contact" title="Contact Us">
           <p>
-            If you have any questions or requests regarding this Privacy Policy,
-            you can reach us at:
+            If you have any questions about this Privacy Policy or your data
+            rights, please reach out to us:
           </p>
-<address className="not-italic space-y-2">
-  <strong>Syntecxhub</strong>
-  <br />
-  MLIG/1347 Arra Bingawan Hanshpuram,
-  <br />
-  Kanpur Nagar, Uttar Pradesh, 208021
-  <br />
-
-  {/* Email */}
-  <div className="flex items-center gap-2">
-    <HiOutlineMail className="text-blue-400 text-lg" />
-    <a
-      href="mailto:info@syntecxhub.com"
-      className="text-sky-600 underline"
-    >
-      info@syntecxhub.com
-    </a>
-  </div>
-
-  {/* Phone */}
-  <div className="flex items-center gap-2">
-    <HiOutlinePhone className="text-green-400 text-lg" />
-    <a
-      href="tel:+916393780295"
-      className="text-sky-600 underline"
-    >
-      +91 6393780295
-    </a>
-  </div>
-</address>
+          <address className="not-italic space-y-2">
+            <strong>Sky Reserve</strong>
+            <br />
+            221B, Civil Lines, Kanpur Nagar,
+            <br />
+            Uttar Pradesh, 208001
+            <br />
+            {/* Email */}
+            <div className="flex items-center gap-2">
+              <HiOutlineMail className="text-sky-500 text-lg" />
+              <a
+                href="mailto:privacy@skyreserve.com"
+                className="text-sky-600 underline"
+              >
+                privacy@skyreserve.com
+              </a>
+            </div>
+            {/* Phone */}
+            <div className="flex items-center gap-2">
+              <HiOutlinePhone className="text-green-500 text-lg" />
+              <a href="tel:+919876543210" className="text-sky-600 underline">
+                +91 98765 43210
+              </a>
+            </div>
+          </address>
         </Section>
       </div>
     </main>

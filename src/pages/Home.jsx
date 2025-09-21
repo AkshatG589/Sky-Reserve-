@@ -9,11 +9,11 @@ import SEO from "../Components/SEO"
 const Home = () => {
   return (
     <>
-      <SEO
+<SEO
   title="SkyReserve - AI-Powered Flight Reservation System"
   description="Discover your next adventure with SkyReserve. Book flights, get AI-powered recommendations, and manage your travel seamlessly."
-  url="https://sky-reserve-3a56bdb3.base44.app/"
-  image="https://sky-reserve-3a56bdb3.base44.app/logo.png"
+  url="https://ak-sky-reserve.vercel.app/"
+  image="https://ak-sky-reserve.vercel.app/logo.png"
 />
       <Hero />
       <WhyChooseUs />

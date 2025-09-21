@@ -1,5 +1,7 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link"; // ✅ for scrolling to #id
 
 const Footer = () => {
   return (
@@ -12,10 +14,18 @@ const Footer = () => {
             AI-powered flight reservation system. Discover, book, and manage your flights with ease.
           </p>
           <div className="flex gap-4 mt-4">
-            <a href="#" className="hover:text-[#ff8a00] transition-colors"><FaFacebookF /></a>
-            <a href="#" className="hover:text-[#ff8a00] transition-colors"><FaInstagram /></a>
-            <a href="#" className="hover:text-[#ff8a00] transition-colors"><FaLinkedinIn /></a>
-            <a href="#" className="hover:text-[#ff8a00] transition-colors"><FaTwitter /></a>
+            <Link to="/facebook" className="hover:text-[#ff8a00] transition-colors">
+              <FaFacebookF />
+            </Link>
+            <Link to="/instagram" className="hover:text-[#ff8a00] transition-colors">
+              <FaInstagram />
+            </Link>
+            <Link to="/linkedin" className="hover:text-[#ff8a00] transition-colors">
+              <FaLinkedinIn />
+            </Link>
+            <Link to="/twitter" className="hover:text-[#ff8a00] transition-colors">
+              <FaTwitter />
+            </Link>
           </div>
         </div>
 
@@ -24,33 +34,88 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-[#ff8a00] transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-[#ff8a00] transition-colors">Careers</a></li>
-              <li><a href="#" className="hover:text-[#ff8a00] transition-colors">Blog</a></li>
+              <li>
+                <Link to="/about" className="hover:text-[#ff8a00] transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="hover:text-[#ff8a00] transition-colors">
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="hover:text-[#ff8a00] transition-colors">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
+
           <div>
             <h3 className="font-semibold mb-4">Support</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-[#ff8a00] transition-colors">Help Center</a></li>
-              <li><a href="#" className="hover:text-[#ff8a00] transition-colors">Contact Us</a></li>
-              <li><a href="#" className="hover:text-[#ff8a00] transition-colors">FAQs</a></li>
+              <li>
+                <Link to="/help" className="hover:text-[#ff8a00] transition-colors">
+                  Help Center
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-[#ff8a00] transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <HashLink
+                  smooth
+                  to="/#faq"
+                  className="hover:text-[#ff8a00] transition-colors"
+                >
+                  FAQs
+                </HashLink>
+              </li>
             </ul>
           </div>
+
           <div>
             <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-[#ff8a00] transition-colors">Flight Booking</a></li>
-              <li><a href="#" className="hover:text-[#ff8a00] transition-colors">AI Recommendations</a></li>
-              <li><a href="#" className="hover:text-[#ff8a00] transition-colors">Manage Trips</a></li>
+              <li>
+                <Link to="/flights" className="hover:text-[#ff8a00] transition-colors">
+                  Flight Booking
+                </Link>
+              </li>
+              <li>
+                <Link to="/assistant" className="hover:text-[#ff8a00] transition-colors">
+                  AI Recommendations
+                </Link>
+              </li>
+              <li>
+                <Link to="/manage-trips" className="hover:text-[#ff8a00] transition-colors">
+                  Manage Trips
+                </Link>
+              </li>
             </ul>
           </div>
+
           <div>
             <h3 className="font-semibold mb-4">Legal</h3>
             <ul className="space-y-2 text-gray-300">
-              <li><a href="#" className="hover:text-[#ff8a00] transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-[#ff8a00] transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-[#ff8a00] transition-colors">Cookies</a></li>
+              <li>
+                <Link to="/terms" className="hover:text-[#ff8a00] transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy-policy" className="hover:text-[#ff8a00] transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link to="/refund-policy" className="hover:text-[#ff8a00] transition-colors">
+                  Refund Policy
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

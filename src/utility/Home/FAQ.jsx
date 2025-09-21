@@ -37,7 +37,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="bg-[#0b1d3a] text-white py-20 px-4">
+    <section id="faq" className="bg-[#0b1d3a] text-white py-20 px-4">
       <div className="max-w-7xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4">
           Frequently Asked Questions

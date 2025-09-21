@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes spin-fast {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-fast-reverse {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.animate-spin-fast {
+  animation: spin-fast 0.7s linear infinite;
+}
+
+.animate-spin-fast-reverse {
+  animation: spin-fast-reverse 0.9s linear infinite;
+}

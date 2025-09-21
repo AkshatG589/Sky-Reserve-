@@ -1,0 +1,37 @@
+/* Plane moving bottom-left to top-right */
+@keyframes diagonalFlyLeft {
+  0% {
+    transform: translate(0, 0) rotate(-45deg);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100vw, -100vh) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+/* Plane moving bottom-right to top-left */
+@keyframes diagonalFlyRight {
+  0% {
+    transform: translate(0, 0) rotate(225deg);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-100vw, -100vh) rotate(225deg);
+    opacity: 0;
+  }
+}
+
+.animate-diagonalFly-left {
+  animation: diagonalFlyLeft 8s linear infinite;
+}
+
+.animate-diagonalFly-right {
+  animation: diagonalFlyRight 8s linear infinite;
+}

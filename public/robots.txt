@@ -1,0 +1,6 @@
+# Allow all search engines
+User-agent: *
+Disallow:
+
+# Point to sitemap
+Sitemap: https://syntecxhub.vercel.app/sitemap.xml

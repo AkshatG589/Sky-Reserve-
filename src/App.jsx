@@ -3,11 +3,15 @@ import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 import ScrollToTop from "./Components/ScrollToTop";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Search from "./pages/Search";
 import NotFound from "./pages/NotFound";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
+
+
 import RefundCancellationPolicy from "./pages/RefundCancellationPolicy";
 import "./App.css"
 import { Toaster } from "react-hot-toast"
@@ -28,6 +32,8 @@ function App() {
         />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/flights" element={<Search />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/refund-policy" element={<RefundCancellationPolicy />} />
